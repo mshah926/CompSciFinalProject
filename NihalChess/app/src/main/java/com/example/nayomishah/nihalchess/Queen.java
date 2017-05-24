@@ -1,14 +1,13 @@
+package com.example.nayomishah.nihalchess;
 
 /**
- * Write a description of class Knight here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Created by nayomishah on 5/24/17.
  */
-public class Knight
+import android.graphics.*;
+public class Queen
 {
     private Picture pict;
-    public Knight(Picture pict)
+    public Queen(Picture pict)
     {
         this.pict = pict;
     }

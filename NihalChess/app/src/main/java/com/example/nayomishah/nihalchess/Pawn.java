@@ -1,14 +1,13 @@
+package com.example.nayomishah.nihalchess;
 
 /**
- * Write a description of class Rook here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Created by nayomishah on 5/24/17.
  */
-public class Rook
+import android.graphics.*;
+public class Pawn
 {
     private Picture pict;
-    public Rook(Picture pict)
+    public Pawn(Picture pict)
     {
         this.pict = pict;
     }

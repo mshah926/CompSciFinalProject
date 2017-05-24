@@ -1,14 +1,13 @@
+package com.example.nayomishah.nihalchess;
 
 /**
- * Write a description of class Queen here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Created by nayomishah on 5/24/17.
  */
-public class Queen
+import android.graphics.*;
+public class Rook
 {
     private Picture pict;
-    public Queen(Picture pict)
+    public Rook(Picture pict)
     {
         this.pict = pict;
     }

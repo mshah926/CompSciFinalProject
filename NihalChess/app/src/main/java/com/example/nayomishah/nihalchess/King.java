@@ -1,14 +1,13 @@
+package com.example.nayomishah.nihalchess;
 
 /**
- * Write a description of class Bishop here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Created by nayomishah on 5/24/17.
  */
-public class Bishop
+import android.graphics.*;
+public class King
 {
     private Picture pict;
-    public Bishop(Picture pict)
+    public King(Picture pict)
     {
         this.pict = pict;
     }
@@ -17,4 +16,6 @@ public class Bishop
         pict = p;
         return pict;
     }
+
+
 }

@@ -1,14 +1,13 @@
+package com.example.nayomishah.nihalchess;
 
 /**
- * Write a description of class Pawn here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Created by nayomishah on 5/24/17.
  */
-public class Pawn
+import android.graphics.*;
+public class Bishop
 {
     private Picture pict;
-    public Pawn(Picture pict)
+    public Bishop(Picture pict)
     {
         this.pict = pict;
     }
