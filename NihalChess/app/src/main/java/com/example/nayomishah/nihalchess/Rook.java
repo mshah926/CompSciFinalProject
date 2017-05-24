@@ -6,12 +6,12 @@ package com.example.nayomishah.nihalchess;
 import android.graphics.*;
 public class Rook extends ChessPiece
 {
-    private Picture pict;
-    public Rook(Picture pict)
+    private int pict;
+    public Rook(int pict)
     {
         this.pict = pict;
     }
-    public Picture setColor(Picture p)
+    public int setColor(int p)
     {
         pict = p;
         return pict;
