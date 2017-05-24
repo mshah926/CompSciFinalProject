@@ -4,7 +4,7 @@ package com.example.nayomishah.nihalchess;
  * Created by nayomishah on 5/24/17.
  */
 import android.graphics.*;
-public class Knight
+public class Knight extends ChessPiece
 {
     private Picture pict;
     public Knight(Picture pict)
