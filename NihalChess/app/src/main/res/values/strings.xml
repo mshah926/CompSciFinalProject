@@ -1,3 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Nihal Chess</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_chess">Chess</string>
+    <string name="title_activity_game_list">Previous Games</string>
+    <string name="squaredesc">Square Background</string>
+    <string name="piecedesc">Chess Piece</string>
+    <string name="play_btn">Play</string>
+    <string name="replay_btn">Replay</string>
+    <string name="ai_btn">AI</string>
+    <string name="draw_btn">Draw</string>
+    <string name="resign_btn">Resign</string>
+    <string name="undo_btn">Undo</string>
+    <string name="white_turn">White\'s Turn</string>
+    <string name="black_turn">Black\'s Turn</string>
+    <string name="welcome_text">NIHAL CHESS</string>
+    <string name="title_activity_replay">Replay</string>
+    <string name="next_btn">Next</string>
+    <string name="prev_btn">Previous</string>
+
 </resources>

@@ -4,16 +4,19 @@ package com.example.nayomishah.nihalchess;
  * Created by nayomishah on 5/24/17.
  */
 import android.graphics.*;
-public class Rook extends ChessPiece
-{
-    private int pict;
-    public Rook(int pict)
-    {
-        this.pict = pict;
+public class Rook extends ChessPiece {
+
+    public String getInitial() { return "R"; }
+
+    public String getPieceName() { return "rook"; }
+
+    public boolean isValidMove(Square dest) {
+
+        //means not horizontal or vertical move.
+        if (getLocation().getY() != dest.getY() && getLocation().getX() != dest.getX()) return false;
+
+        return this.clearPathTo(dest);
     }
-    public int setColor(int p)
-    {
-        pict = p;
-        return pict;
-    }
+
+
 }
