@@ -85,10 +85,6 @@ public class Game {
 
     public BoardSpot[][] getBoard() { return board; }
 
-    public ChessPiece[] getCapturedWhite() { return capturedWhite; }
-
-    public ChessPiece[] getCapturedBlack() { return capturedBlack; }
-
     public Player getCurrentPlayer() { return turn; }
 
     public boolean move(int s, int d) {
@@ -397,31 +393,6 @@ public class Game {
         return false;
     }
 
-    public int fileToIndex(char file) {
-
-        switch (file) {
-
-            case 'a':
-                return 0;
-            case 'b':
-                return 1;
-            case 'c':
-                return 2;
-            case 'd':
-                return 3;
-            case 'e':
-                return 4;
-            case 'f':
-                return 5;
-            case 'g':
-                return 6;
-            case 'h':
-                return 7;
-            default:
-                return -1;
-        }
-
-    }
 
     public ChessPiece promotion(String p) {
 
@@ -442,23 +413,13 @@ public class Game {
         }
     }
 
-    public int blackCaptureCount() { return capturedBlackCount; }
-
-    public int whiteCaptureCount() { return capturedWhiteCount; }
-
     public boolean blackInCheck() { return blackInCheck; }
 
     public boolean whiteInCheck() { return whiteInCheck; }
 
-    public void nextTurn() {
-        turn = turn == white ? black : white;
-    }
-
     public boolean whiteWin() { return whiteWins; }
 
     public boolean blackWin() { return blackWins; }
-
-    public LinkedList<Move> getMoves() { return moves; }
 
 
 }

@@ -36,8 +36,6 @@ public class Player {
 
     public ArrayList<ChessPiece> getPieces() { return pieces; }
 
-    public ArrayList<ChessPiece> getUncapturedPieces() { return uncapturedPieces; }
-
     public void setOpponent(Player opponent) { this.opponent = opponent; }
 
     public void setKing(King king) { this.king = king; }

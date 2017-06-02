@@ -40,11 +40,7 @@ public class Move {
 
     public void setSourcePosition(int s) { this.s = s;}
 
-    public int getSourcePosition() { return s; }
-
     public void setDestPosition(int d) { this.d = d; }
-
-    public int getDestPosition() { return d; }
 
 }
 
