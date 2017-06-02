@@ -5,5 +5,5 @@ package com.example.nayomishah.nihalchess;
  */
 
 public enum PlayerColor {
-    BLACK, WHITE
+    WHITE , BLACK
 }
