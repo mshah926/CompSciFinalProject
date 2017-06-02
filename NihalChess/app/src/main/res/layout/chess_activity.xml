@@ -21,20 +21,23 @@
         android:stretchMode="columnWidth"
         android:verticalSpacing="0dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <TextView
+        android:id="@+id/turnView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp" >
+        android:text="@string/white_turn" />
 
-        <Button
-            android:id="@+id/AIButton"
-            android:layout_width="52dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="@string/ai_btn" />
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="53dp"
+        android:layout_marginEnd="53dp"
+        android:layout_above="@+id/turnView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <Button
             android:id="@+id/undoButton"
@@ -54,13 +57,5 @@
             android:layout_height="match_parent"
             android:text="@string/resign_btn" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/turnView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/white_turn" />
 
 </RelativeLayout>

@@ -24,11 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
         initPlayButton();
-        if (!RUN_ONCE) {
-            RUN_ONCE = true;
-            PlayedGames.playedGames = new ArrayList<LinkedList<Move>>();
-            PlayedGames.gameNames = new ArrayList<String>();
-        }
+
     }
 
 
@@ -63,6 +59,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }

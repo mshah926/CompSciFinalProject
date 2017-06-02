@@ -55,7 +55,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         }
 
 
-        initAIButton();
         initResignButton();
         initDrawButton();
         initUndoButton();
@@ -294,19 +293,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         }
     }
 
-    private void initAIButton() {
-
-        Button AIButton = (Button) findViewById(R.id.AIButton);
-        AIButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View argo) {
-
-                Toast toast = Toast.makeText(ChessActivity.this, "Available in Premium Version Only", Toast.LENGTH_LONG);
-                toast.show();
-            }
-        });
-    }
 
     private void initDrawButton() {
 
