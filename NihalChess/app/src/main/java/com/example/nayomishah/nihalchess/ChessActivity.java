@@ -3,23 +3,17 @@ package com.example.nayomishah.nihalchess;
 /**
  * Created by nayomishah on 6/1/17.
  */
-import java.util.ArrayList;
-import java.util.Random;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +22,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
 
     private Game game;
     private static boolean RUN_ONCE = false;
-    private String gameName;
     private TextView turnView;
     private GridView chessboard;
     private View[] squaresSelected;
@@ -55,7 +48,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         }
 
 
-        initResignButton();
         initDrawButton();
         initUndoButton();
 
@@ -68,29 +60,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         this.chessboard = chessBoardGridView;
 
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.chess, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        switch(item.getItemId()) {
-            case (R.id.action_settings):
-                return true;
-            case (android.R.id.home):
-                onBackPressed();
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -306,18 +275,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         });
     }
 
-    private void initResignButton() {
-
-        Button resignButton = (Button) findViewById(R.id.resignButton);
-        resignButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View argo) {
-
-                resign();
-            }
-        });
-    }
 
     private void initUndoButton() {
 
@@ -336,58 +293,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
 
             }
         });
-    }
-
-    private void AI() {
-
-    }
-
-    private void resign() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Resign");
-        builder.setMessage("Are you sure?");
-
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-
-                final String winner = game.getCurrentPlayer().getColor() == PlayerColor.WHITE ? "Black" : "White";
-
-
-                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        switch (which){
-                            case DialogInterface.BUTTON_POSITIVE:
-                                Intent intent = getIntent();
-                                finish();
-                                RUN_ONCE = false;
-                                startActivity(intent);
-                                break;
-
-                            case DialogInterface.BUTTON_NEGATIVE:
-                                startActivity(new Intent(ChessActivity.this, HomeActivity.class));
-                                RUN_ONCE = false;
-                                finish();
-                                break;
-                        }
-                    }
-                };
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(ChessActivity.this);
-                builder.setMessage(winner + " wins! Want to play again?").setPositiveButton("Yes", dialogClickListener)
-                        .setNegativeButton("No", dialogClickListener).show();
-            }
-        });
-
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        AlertDialog alert = builder.create();
-        alert.show();
     }
 
 
