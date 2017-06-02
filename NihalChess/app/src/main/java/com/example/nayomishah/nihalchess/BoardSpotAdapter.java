@@ -10,12 +10,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-public class SquareAdapter extends BaseAdapter {
+public class BoardSpotAdapter extends BaseAdapter {
 
     private Context context;
-    private Square[][] board;
+    private BoardSpot[][] board;
 
-    public SquareAdapter(Context c, Square[][] board) {
+    public BoardSpotAdapter(Context c, BoardSpot[][] board) {
         this.context = c;
         this.board = board;
     }

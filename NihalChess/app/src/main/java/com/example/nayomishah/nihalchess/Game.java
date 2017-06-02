@@ -10,7 +10,7 @@ import com.example.nayomishah.nihalchess.Move.MoveType;
 
 public class Game {
 
-    private Square[][] board;
+    private BoardSpot[][] board;
     private ChessPiece[] capturedWhite;
     private ChessPiece[] capturedBlack;
     private int capturedWhiteCount;
@@ -26,7 +26,7 @@ public class Game {
 
     public Game() {
 
-        board = new Square[8][8];
+        board = new BoardSpot[8][8];
         black = new Player(PlayerColor.BLACK);
         white = new Player(PlayerColor.WHITE);
         black.setOpponent(white);
@@ -42,7 +42,7 @@ public class Game {
 
         for (int i = 0; i < 8 ; i++) {
             for (int j = 0; j < 8; j++) {
-                board[i][j] = new Square(i, j);
+                board[i][j] = new BoardSpot(i, j);
             }
         }
 
@@ -83,7 +83,7 @@ public class Game {
         }
     }
 
-    public Square[][] getBoard() { return board; }
+    public BoardSpot[][] getBoard() { return board; }
 
     public ChessPiece[] getCapturedWhite() { return capturedWhite; }
 
@@ -102,13 +102,13 @@ public class Game {
         int c = s%8;
         int r = s/8;
 
-        Square source = board[r][c];
+        BoardSpot source = board[r][c];
 
         c = d%8;
         r = d/8;
 
 
-        Square dest = board[r][c];
+        BoardSpot dest = board[r][c];
 
         ChessPiece sourcePiece = source.getPiece();
 
@@ -227,7 +227,7 @@ public class Game {
 
 
         //check if we put the other player in check and set some flags, or announce game result if checkmate
-        Square oppKing = turn.getOpponent().getKing().getLocation();
+        BoardSpot oppKing = turn.getOpponent().getKing().getLocation();
 
         if (turn.getOpponent().getKing().inCheck(oppKing)) {
 
@@ -259,9 +259,9 @@ public class Game {
 
         Move lastMove = moves.removeLast();
 
-        Square source = lastMove.getSource();
+        BoardSpot source = lastMove.getSource();
 
-        Square dest = lastMove.getDestination();
+        BoardSpot dest = lastMove.getDestination();
 
         ChessPiece piece = lastMove.getPiece();
 
@@ -294,7 +294,7 @@ public class Game {
 
             piece.setLocation(source);
 
-            Square capLoc = capture.getLocation();
+            BoardSpot capLoc = capture.getLocation();
 
             board[capLoc.getY()][capLoc.getX()].setPiece(capture);
             board[source.getY()][source.getX()].setPiece(piece);;
@@ -358,7 +358,7 @@ public class Game {
 
     }
 
-    private boolean enPassant(ChessPiece sourcePiece, Square dest) {
+    private boolean enPassant(ChessPiece sourcePiece, BoardSpot dest) {
 
         if (sourcePiece instanceof Pawn && dest.getPiece() == null) {
 
@@ -388,7 +388,7 @@ public class Game {
     }
 
 
-    private boolean castle(ChessPiece sourcePiece, Square dest) {
+    private boolean castle(ChessPiece sourcePiece, BoardSpot dest) {
 
         int xPos = Math.abs( dest.getX() - sourcePiece.getLocation().getX());
 

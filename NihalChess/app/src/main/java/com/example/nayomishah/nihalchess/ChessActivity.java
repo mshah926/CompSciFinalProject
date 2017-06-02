@@ -27,14 +27,13 @@ import android.widget.Toast;
 public class ChessActivity extends AppCompatActivity implements OnItemClickListener {
 
     private Game game;
-    private boolean record;
     private static boolean RUN_ONCE = false;
     private String gameName;
     private TextView turnView;
     private GridView chessboard;
     private View[] squaresSelected;
     private int[] squarePositions;
-    private SquareAdapter adapter;
+    private BoardSpotAdapter adapter;
     private boolean drawPressed;
     private boolean drawPressedThisTurn;
     private boolean undoPressed;
@@ -47,11 +46,10 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         if (!RUN_ONCE) {
 
             RUN_ONCE = true;
-            recordGame();
             this.game = new Game();
             squaresSelected = new View[2];
             squarePositions = new int[2];
-            adapter = new SquareAdapter(this, game.getBoard());
+            adapter = new BoardSpotAdapter(this, game.getBoard());
             turnView = (TextView)findViewById(R.id.turnView);
 
         }
@@ -70,51 +68,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
 
         this.chessboard = chessBoardGridView;
 
-
-    }
-
-    private void recordGame() {
-
-
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        record = true;
-
-                        AlertDialog.Builder alert = new AlertDialog.Builder(ChessActivity.this);
-                        alert.setTitle("Record Game");
-                        alert.setMessage("Enter a name for this game");
-
-                        // Set an EditText view to get user input
-                        final EditText input = new EditText(ChessActivity.this);
-                        alert.setView(input);
-                        alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                String value = input.getText().toString();
-                                gameName = value;
-                            }
-                        });
-
-                        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                record = false;
-                            }
-                        });
-
-                        alert.show();
-                        break;
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        record = false;
-                        break;
-                }
-            }
-        };
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Want to record this game?").setPositiveButton("Yes", dialogClickListener)
-                .setNegativeButton("No", dialogClickListener).show();
 
     }
 
@@ -174,7 +127,7 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
         //selecting a piece to move.
         if (squaresSelected[0] == null) {
 
-            Square selectedSquare = game.getBoard()[position/8][position%8];
+            BoardSpot selectedSquare = game.getBoard()[position/8][position%8];
 
             if (selectedSquare.getPiece() == null) return;
 
@@ -201,11 +154,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
                 String toastMessage = "";
                 Toast toast = null;
                 if (game.whiteWin() || game.blackWin()) {
-
-                    if (record) {
-                        PlayedGames.playedGames.add(game.getMoves());
-                        PlayedGames.gameNames.add(gameName);
-                    }
 
                     final String winner = game.whiteWin() == true ? "White" : "Black";
 
@@ -419,10 +367,6 @@ public class ChessActivity extends AppCompatActivity implements OnItemClickListe
 
                 final String winner = game.getCurrentPlayer().getColor() == PlayerColor.WHITE ? "Black" : "White";
 
-                if (record) {
-                    PlayedGames.playedGames.add(game.getMoves());
-                    PlayedGames.gameNames.add(gameName);
-                }
 
                 DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
                     @Override

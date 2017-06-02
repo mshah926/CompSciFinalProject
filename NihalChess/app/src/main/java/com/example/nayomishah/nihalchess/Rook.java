@@ -10,7 +10,7 @@ public class Rook extends ChessPiece {
 
     public String getPieceName() { return "rook"; }
 
-    public boolean isValidMove(Square dest) {
+    public boolean isValidMove(BoardSpot dest) {
 
         //means not horizontal or vertical move.
         if (getLocation().getY() != dest.getY() && getLocation().getX() != dest.getX()) return false;

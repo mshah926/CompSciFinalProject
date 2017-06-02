@@ -15,7 +15,7 @@ public class Knight extends ChessPiece {
 	 * "L" shape movement
 	 */
 
-    public boolean isValidMove(Square dest)
+    public boolean isValidMove(BoardSpot dest)
     {
         int xPos = Math.abs( dest.getX() - getLocation().getX());
         int yPos= Math.abs( dest.getY() - getLocation().getY());

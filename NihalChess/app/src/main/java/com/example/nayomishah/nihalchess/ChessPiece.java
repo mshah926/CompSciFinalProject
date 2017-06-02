@@ -9,9 +9,9 @@ import android.content.Context;
 public abstract class ChessPiece {
 
 
-    private Square[][] board;
+    private BoardSpot[][] board;
 
-    private Square location;
+    private BoardSpot location;
 
     private Player player;
 
@@ -21,9 +21,9 @@ public abstract class ChessPiece {
 
     public abstract String getPieceName();
 
-    public abstract boolean isValidMove(Square dest);
+    public abstract boolean isValidMove(BoardSpot dest);
 
-    public boolean canMoveTo(Square dest) {
+    public boolean canMoveTo(BoardSpot dest) {
 
         if (location.equals(dest)) return false;
 
@@ -38,7 +38,7 @@ public abstract class ChessPiece {
         //implemented on a piece by piece basis.
         if (!isValidMove(dest))  return false;
 
-        Square kingLoc = null;
+        BoardSpot kingLoc = null;
 
         if (this instanceof King) {
 
@@ -54,7 +54,7 @@ public abstract class ChessPiece {
         return true;
     }
 
-    public boolean clearPathTo(Square dest) {
+    public boolean clearPathTo(BoardSpot dest) {
 
         if (location.getX() == dest.getX() && location.getY() != dest.getY()) {
 
@@ -102,15 +102,15 @@ public abstract class ChessPiece {
         return false;
     }
 
-    public Square getLocation() { return location; }
+    public BoardSpot getLocation() { return location; }
 
-    public void setLocation(Square location) { this.location = location; }
+    public void setLocation(BoardSpot location) { this.location = location; }
 
     public Player getPlayer() { return player; }
 
     public void setPlayer(Player player) { this.player = player; }
 
-    public Square[][] getBoard() { return board; }
+    public BoardSpot[][] getBoard() { return board; }
 
     public void incrementMoves() { moves++; }
 
@@ -120,7 +120,7 @@ public abstract class ChessPiece {
 
     public void setNumberOfMoves(int moves) { this.moves = moves; }
 
-    public void setBoard(Square[][] board) { this.board = board; }
+    public void setBoard(BoardSpot[][] board) { this.board = board; }
 
     public String colorString() {
 

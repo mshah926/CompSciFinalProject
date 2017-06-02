@@ -11,7 +11,7 @@ public class King extends ChessPiece {
     public String getPieceName() { return "king"; }
 
 
-    public boolean isValidMove(Square dest)
+    public boolean isValidMove(BoardSpot dest)
     {
         int xPos = Math.abs( dest.getX() - getLocation().getX());
         int yPos= Math.abs( dest.getY() - getLocation().getY());
@@ -72,7 +72,7 @@ public class King extends ChessPiece {
 
     }
 
-    public boolean inCheck(Square kingLoc) {
+    public boolean inCheck(BoardSpot kingLoc) {
 
         for (ChessPiece chessP: getPlayer().getOpponent().getPieces())
         {
@@ -90,14 +90,14 @@ public class King extends ChessPiece {
         return false;
     }
 
-    public boolean checkmate(Square kingLoc) {
+    public boolean checkmate(BoardSpot kingLoc) {
 
-        Square forward = new Square(kingLoc.getY() + 1, kingLoc.getX());
-        Square backward = new Square(kingLoc.getY() - 1, kingLoc.getX());
-        Square rightUp = new Square(kingLoc.getY() + 1, kingLoc.getX() + 1);
-        Square leftUp = new Square(kingLoc.getY() + 1, kingLoc.getX() - 1);
-        Square rightDown = new Square(kingLoc.getY() - 1, kingLoc.getX() + 1);
-        Square leftDown = new Square(kingLoc.getY() - 1, kingLoc.getX() - 1);
+        BoardSpot forward = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX());
+        BoardSpot backward = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX());
+        BoardSpot rightUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() + 1);
+        BoardSpot leftUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() - 1);
+        BoardSpot rightDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() + 1);
+        BoardSpot leftDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() - 1);
 
         if (forward.getX() >= 0 && forward.getX() <= 7
                 && forward.getY() >= 0 && forward.getY() <= 7) {

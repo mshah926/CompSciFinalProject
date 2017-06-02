@@ -7,7 +7,7 @@ package com.example.nayomishah.nihalchess;
 import java.io.Serializable;
 
 
-public class Square implements Serializable{
+public class BoardSpot implements Serializable {
 
 
     private int x;	//Rank is row, x value
@@ -21,7 +21,7 @@ public class Square implements Serializable{
 
     public int getY() { return y; }
 
-    public Square(int r, int c) {
+    public BoardSpot(int r, int c) {
         this.y = r;
         this.x = c;
     }
@@ -33,9 +33,9 @@ public class Square implements Serializable{
     @Override
     public boolean equals(Object o) {
 
-        if (!(o instanceof Square)) return false;
+        if (!(o instanceof BoardSpot)) return false;
 
-        if (this.getX() == ((Square) o).getX() && this.getY() == ((Square) o).getY()) return true;
+        if (this.getX() == ((BoardSpot) o).getX() && this.getY() == ((BoardSpot) o).getY()) return true;
 
         return false;
     }

@@ -9,7 +9,7 @@ public class Pawn extends ChessPiece {
 
     public String getPieceName() { return "pawn"; }
 
-    public boolean isValidMove(Square dest) {
+    public boolean isValidMove(BoardSpot dest) {
 
         int yPos = getPlayer().getColor() == PlayerColor.WHITE ? 1 : -1;
 

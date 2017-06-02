@@ -12,7 +12,7 @@ public class Bishop extends ChessPiece {
 
     public String getPieceName() { return "bishop"; }
 
-    public boolean isValidMove(Square dest) {
+    public boolean isValidMove(BoardSpot dest) {
         int xPos = Math.abs( dest.getX() - getLocation().getX());
         int yPos= Math.abs( dest.getY() - getLocation().getY());
         if(xPos != yPos) //checking diagonal positions

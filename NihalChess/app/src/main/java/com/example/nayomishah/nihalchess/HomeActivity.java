@@ -24,7 +24,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
         initPlayButton();
-        initReplayButton();
         if (!RUN_ONCE) {
             RUN_ONCE = true;
             PlayedGames.playedGames = new ArrayList<LinkedList<Move>>();
@@ -65,17 +64,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    private void initReplayButton() {
 
-        Button replayButton = (Button) findViewById(R.id.replayButton);
-        replayButton.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View argo) {
-
-                startActivity(new Intent(HomeActivity.this, GameListActivity.class));
-            }
-        });
-    }
 }
 

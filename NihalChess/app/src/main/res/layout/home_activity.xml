@@ -22,31 +22,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/chessLogo"
         android:layout_marginTop="40dp"
-         android:layout_marginLeft="35dp" >
+         android:layout_marginLeft="35dp"
+        android:weightSum="1">
 
-        <Button
-            android:id="@+id/playButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="43dp"
-            android:text="@string/play_btn" />
-
-        <Button
-            android:id="@+id/replayButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:text="@string/replay_btn" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/chessLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/welcomeText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="13dp"
         android:contentDescription="chess logo"
-        android:src="@drawable/chesslogo" />
+        android:src="@drawable/chesslogo"
+        android:layout_below="@+id/welcomeText"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/playButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/play_btn"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

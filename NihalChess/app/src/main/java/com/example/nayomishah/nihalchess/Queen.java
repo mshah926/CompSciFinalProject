@@ -9,7 +9,7 @@ public class Queen extends ChessPiece {
 
     public String getPieceName() { return "queen"; }
 
-    public boolean isValidMove(Square dest) {
+    public boolean isValidMove(BoardSpot dest) {
 
         if ((getLocation().getX() == dest.getX()) ||
                 getLocation().getY() == dest.getY() ||

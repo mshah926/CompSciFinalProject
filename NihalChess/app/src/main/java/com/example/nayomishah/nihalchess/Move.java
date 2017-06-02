@@ -12,15 +12,15 @@ public class Move {
 
     private ChessPiece chessPiece;
     private ChessPiece capture;
-    private Square source;
-    private Square destination;
+    private BoardSpot start;
+    private BoardSpot destination;
     private MoveType type;
     private int s, d;
 
-    public Move(ChessPiece chessPiece, ChessPiece capture, Square source, Square destination) {
+    public Move(ChessPiece chessPiece, ChessPiece capture, BoardSpot start, BoardSpot destination) {
         this.chessPiece = chessPiece;
         this.capture = capture;
-        this.source = source;
+        this.start = start;
         this.destination = destination;
     }
 
@@ -28,9 +28,9 @@ public class Move {
 
     public void setType(MoveType type) { this.type = type; }
 
-    public Square getDestination() { return destination; }
+    public BoardSpot getDestination() { return destination; }
 
-    public Square getSource() { return source;}
+    public BoardSpot getSource() { return start;}
 
     public void setCapture(ChessPiece piece) { this.capture = piece; }
 

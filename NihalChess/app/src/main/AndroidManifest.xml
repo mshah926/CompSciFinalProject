@@ -30,18 +30,6 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.nayomishah.nihalchess.HomeActivity" />
         </activity>
-        <activity
-            android:name=".GameListActivity"
-            android:label="@string/title_activity_game_list"
-            android:parentActivityName=".HomeActivity" >
-            <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.nayomishah.nihalchess.GameListActivity" />
-        </activity>
-        <activity
-            android:name=".ReplayActivity"
-            android:label="@string/title_activity_replay" >
-        </activity>
     </application>
     
 </manifest>
