@@ -56,9 +56,9 @@ public class Pawn extends ChessPiece {
 
         Pawn pawn = new Pawn();
 
-        if(pawn.isValidMove(forward)==false && pawn.isValidMove(backward) == false
-                && pawn.isValidMove(rightUp) == false && pawn.isValidMove(leftUp) == false && pawn.isValidMove(rightDown) == false
-                && pawn.isValidMove(leftDown) == false)
+        if(!pawn.isValidMove(forward) && !pawn.isValidMove(backward)
+                && !pawn.isValidMove(rightUp) && !pawn.isValidMove(leftUp) && !pawn.isValidMove(rightDown)
+                && !pawn.isValidMove(leftDown))
         {
             return true;
         }

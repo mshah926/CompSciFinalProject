@@ -33,9 +33,9 @@ public class Bishop extends ChessPiece {
 
         Bishop bishop = new Bishop();
 
-        if(bishop.isValidMove(forward)==false && bishop.isValidMove(backward) == false
-                && bishop.isValidMove(rightUp) == false && bishop.isValidMove(leftUp) == false && bishop.isValidMove(rightDown) == false
-                && bishop.isValidMove(leftDown) == false)
+        if(!bishop.isValidMove(forward) && !bishop.isValidMove(backward)
+                && !bishop.isValidMove(rightUp) && !bishop.isValidMove(leftUp) && !bishop.isValidMove(rightDown)
+                && !bishop.isValidMove(leftDown))
         {
             return true;
         }

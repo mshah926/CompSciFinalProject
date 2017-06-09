@@ -28,9 +28,9 @@ public class Rook extends ChessPiece {
 
         Rook rook = new Rook();
 
-        if(rook.isValidMove(forward)==false && rook.isValidMove(backward) == false
-                && rook.isValidMove(rightUp) == false && rook.isValidMove(leftUp) == false && rook.isValidMove(rightDown) == false
-                && rook.isValidMove(leftDown) == false)
+        if(!rook.isValidMove(forward) && !rook.isValidMove(backward)
+                && !rook.isValidMove(rightUp) && !rook.isValidMove(leftUp) && !rook.isValidMove(rightDown)
+                && !rook.isValidMove(leftDown))
         {
             return true;
         }

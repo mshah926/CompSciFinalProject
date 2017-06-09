@@ -29,9 +29,9 @@ public class Queen extends ChessPiece {
 
         Queen queen = new Queen();
 
-        if(queen.isValidMove(forward)==false && queen.isValidMove(backward) == false
-                && queen.isValidMove(rightUp) == false && queen.isValidMove(leftUp) == false && queen.isValidMove(rightDown) == false
-                && queen.isValidMove(leftDown) == false)
+        if(!queen.isValidMove(forward) && !queen.isValidMove(backward)
+                && !queen.isValidMove(rightUp) && !queen.isValidMove(leftUp) && !queen.isValidMove(rightDown)
+                && !queen.isValidMove(leftDown))
         {
             return true;
         }

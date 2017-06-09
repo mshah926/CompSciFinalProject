@@ -98,15 +98,21 @@ public class King extends ChessPiece {
         Knight knight = new Knight();
         Pawn pawn = new Pawn();
 
-        if(inCheck(kingLoc) && !queen.noMovesToSaveKing(kingLoc) &&
-                !bishop.noMovesToSaveKing(kingLoc) &&
-                !rook.noMovesToSaveKing(kingLoc) &&
-                !knight.noMovesToSaveKing(kingLoc) &&
-                !pawn.noMovesToSaveKing(kingLoc))
-        {
-            return true;
-        }
+            if(inCheck(kingLoc) && !queen.noMovesToSaveKing(kingLoc) &&
+                    !bishop.noMovesToSaveKing(kingLoc) &&
+                    !rook.noMovesToSaveKing(kingLoc) &&
+                    !knight.noMovesToSaveKing(kingLoc) &&
+                    !pawn.noMovesToSaveKing(kingLoc))
+            {
+                return true;
+            }
+
+
+
         return false;
+
+
     }
 }
+
 

@@ -39,9 +39,9 @@ public class Knight extends ChessPiece {
 
         Knight knight = new Knight();
 
-        if(knight.isValidMove(forward)==false && knight.isValidMove(backward) == false
-                && knight.isValidMove(rightUp) == false && knight.isValidMove(leftUp) == false && knight.isValidMove(rightDown) == false
-                && knight.isValidMove(leftDown) == false)
+        if(!knight.isValidMove(forward) && !knight.isValidMove(backward)
+                && !knight.isValidMove(rightUp) && !knight.isValidMove(leftUp) && !knight.isValidMove(rightDown)
+                && !knight.isValidMove(leftDown))
         {
             return true;
         }
