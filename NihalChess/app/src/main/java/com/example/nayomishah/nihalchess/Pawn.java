@@ -45,24 +45,5 @@ public class Pawn extends ChessPiece {
         return false;
     }
 
-    public boolean noMovesToSaveKing(BoardSpot kingLoc)
-    {
-        BoardSpot forward = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX());
-        BoardSpot backward = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX());
-        BoardSpot rightUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() + 1);
-        BoardSpot leftUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() - 1);
-        BoardSpot rightDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() + 1);
-        BoardSpot leftDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() - 1);
-
-        Pawn pawn = new Pawn();
-
-        if(!pawn.isValidMove(forward) && !pawn.isValidMove(backward)
-                && !pawn.isValidMove(rightUp) && !pawn.isValidMove(leftUp) && !pawn.isValidMove(rightDown)
-                && !pawn.isValidMove(leftDown))
-        {
-            return true;
-        }
-        return false;
-    }
 
 }

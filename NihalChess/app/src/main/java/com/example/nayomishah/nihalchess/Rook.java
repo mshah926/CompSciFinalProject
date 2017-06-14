@@ -17,25 +17,8 @@ public class Rook extends ChessPiece {
         return this.clearPathTo(dest);
     }
 
-    public boolean noMovesToSaveKing(BoardSpot kingLoc)
-    {
-        BoardSpot forward = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX());
-        BoardSpot backward = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX());
-        BoardSpot rightUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() + 1);
-        BoardSpot leftUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() - 1);
-        BoardSpot rightDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() + 1);
-        BoardSpot leftDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() - 1);
 
-        Rook rook = new Rook();
 
-        if(!rook.isValidMove(forward) && !rook.isValidMove(backward)
-                && !rook.isValidMove(rightUp) && !rook.isValidMove(leftUp) && !rook.isValidMove(rightDown)
-                && !rook.isValidMove(leftDown))
-        {
-            return true;
-        }
-        return false;
-    }
 
 
 }

@@ -28,24 +28,5 @@ public class Knight extends ChessPiece {
         return false;
     }
 
-    public boolean noMovesToSaveKing(BoardSpot kingLoc)
-    {
-        BoardSpot forward = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX());
-        BoardSpot backward = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX());
-        BoardSpot rightUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() + 1);
-        BoardSpot leftUp = new BoardSpot(kingLoc.getY() + 1, kingLoc.getX() - 1);
-        BoardSpot rightDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() + 1);
-        BoardSpot leftDown = new BoardSpot(kingLoc.getY() - 1, kingLoc.getX() - 1);
-
-        Knight knight = new Knight();
-
-        if(!knight.isValidMove(forward) && !knight.isValidMove(backward)
-                && !knight.isValidMove(rightUp) && !knight.isValidMove(leftUp) && !knight.isValidMove(rightDown)
-                && !knight.isValidMove(leftDown))
-        {
-            return true;
-        }
-        return false;
-    }
 
 }
