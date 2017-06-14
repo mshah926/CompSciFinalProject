@@ -102,6 +102,7 @@ public abstract class ChessPiece {
         return false;
     }
 
+
     public BoardSpot getLocation() { return location; }
 
     public void setLocation(BoardSpot location) { this.location = location; }

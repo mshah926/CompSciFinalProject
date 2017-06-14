@@ -16,9 +16,11 @@ public class Queen extends ChessPiece {
                 Math.abs(getLocation().getX() - dest.getX()) == Math.abs(getLocation().getY() - dest.getY())) {
             return this.clearPathTo(dest);
         }
-
         return false;
     }
+
+
+
 
 }
 

@@ -6,18 +6,21 @@ package com.example.nayomishah.nihalchess;
 public class King extends ChessPiece {
 
 
-    public String getInitial() { return "K"; }
+    public String getInitial() {
+        return "K";
+    }
 
-    public String getPieceName() { return "king"; }
+    public String getPieceName() {
+        return "king";
+    }
 
 
-    public boolean isValidMove(BoardSpot dest)
-    {
-        int xPos = Math.abs( dest.getX() - getLocation().getX());
-        int yPos= Math.abs( dest.getY() - getLocation().getY());
+    public boolean isValidMove(BoardSpot dest) {
+        int xPos = Math.abs(dest.getX() - getLocation().getX());
+        int yPos = Math.abs(dest.getY() - getLocation().getY());
 
         //moving one space in any direction.
-        if (((xPos) <=1 && (yPos) <=1)) return true;
+        if (((xPos) <= 1 && (yPos) <= 1)) return true;
 
         if (getPlayer().getColor() == PlayerColor.WHITE) {
 
@@ -30,8 +33,7 @@ public class King extends ChessPiece {
                     if (!(rook instanceof Rook && rook.numberOfMoves() == 0)) return false;
 
                     return clearPathTo(dest);
-                }
-                else if ((dest.getX() == 2 && dest.getY() == 7)) {
+                } else if ((dest.getX() == 2 && dest.getY() == 7)) {
 
                     ChessPiece rook = getBoard()[dest.getX() - 2][dest.getY()].getPiece();
 
@@ -43,8 +45,7 @@ public class King extends ChessPiece {
 
             }
             return false;
-        }
-        else {
+        } else {
 
             if (getLocation().getX() == 4 && getLocation().getY() == 0 && numberOfMoves() == 0) {
 
@@ -55,8 +56,7 @@ public class King extends ChessPiece {
                     if (!(rook instanceof Rook && rook.numberOfMoves() == 0)) return false;
 
                     return clearPathTo(dest);
-                }
-                else if ((dest.getX() == 2 && dest.getY() == 0)) {
+                } else if ((dest.getX() == 2 && dest.getY() == 0)) {
 
                     ChessPiece rook = getBoard()[dest.getX() - 2][dest.getY()].getPiece();
 
@@ -74,14 +74,12 @@ public class King extends ChessPiece {
 
     public boolean inCheck(BoardSpot kingLoc) {
 
-        for (ChessPiece chessP: getPlayer().getOpponent().getPieces())
-        {
+        for (ChessPiece chessP : getPlayer().getOpponent().getPieces()) {
             if (chessP.getLocation() == null) {
                 return false;
 
             }
-            if (chessP.isValidMove(kingLoc) && chessP.getLocation() != null)
-            {
+            if (chessP.isValidMove(kingLoc) && chessP.getLocation() != null) {
                 return true;
             }
 
@@ -135,4 +133,5 @@ public class King extends ChessPiece {
 
     }
 }
+
 

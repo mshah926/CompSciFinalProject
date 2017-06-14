@@ -16,6 +16,16 @@ public class Player {
 
     private King king;
 
+    private Queen queen;
+
+    private Rook rook;
+
+    private Bishop bishop;
+
+    private Knight knight;
+
+    private Pawn pawn;
+
     private PlayerColor color;
 
     public Player(PlayerColor color) {
@@ -41,5 +51,18 @@ public class Player {
     public void setKing(King king) { this.king = king; }
 
     public King getKing() { return king; }
+
+    public Queen getQueen() { return queen; }
+
+    public Rook getRook() { return rook; }
+
+    public Bishop getBishop() { return bishop; }
+
+    public Knight getKnight() { return knight; }
+
+    public Pawn getPawn() { return pawn; }
+
+
+
 
 }
